@@ -295,6 +295,9 @@ module Cupertino
           form.theAccountPW = self.password
           form.submit
         end
+        if !page.search('.dserror').empty?
+          raise UnsuccessfulAuthenticationError, page.search('.dserror')[0].text
+        end
       end
 
       def select_team!
