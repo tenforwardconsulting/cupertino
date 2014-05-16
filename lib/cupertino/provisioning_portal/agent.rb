@@ -291,9 +291,9 @@ module Cupertino
       private
 
       def login!
-        if form = page.form_with(:name => 'appleConnectForm')
-          form.theAccountName = self.username
-          form.theAccountPW = self.password
+        if form = page.forms.first
+          form.appleId = self.username
+          form.accountPassword = self.password
           form.submit
         end
         if !page.search('.dserror').empty?
