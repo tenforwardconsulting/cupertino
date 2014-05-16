@@ -291,7 +291,7 @@ module Cupertino
       private
 
       def login!
-        if form = page.forms.first
+        if form = page.form_with(:name => 'form2')
           form.appleId = self.username
           form.accountPassword = self.password
           form.submit
