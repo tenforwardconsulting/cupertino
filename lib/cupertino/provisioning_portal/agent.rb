@@ -387,6 +387,7 @@ module Cupertino
 
           form.submit
         end
+
         if !page.search('.dserror').empty?
           raise UnsuccessfulAuthenticationError, page.search('.dserror')[0].text
         end
