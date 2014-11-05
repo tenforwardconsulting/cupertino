@@ -208,11 +208,6 @@ module Cupertino
           'csrf_ts' => page.response['csrf_ts']
         }
 
-        @profile_csrf_headers = {
-          'csrf' => page.response['csrf'],
-          'csrf_ts' => page.response['csrf_ts']
-        }
-
         profile_data = page.content
         parsed_profile_data = JSON.parse(profile_data)
 
